@@ -69,6 +69,11 @@ typedef struct
 } DDGetoptOption;
 
 /**
+ * Option table constant to use as a null terminator in a list.
+ */
+extern DDGetoptOption const DDGetoptOptionNull;
+
+/**
  * A command line option parser implemented using <a
  * href="http://developer.apple.com/documentation/Darwin/Reference/ManPages/man3/getopt_long.3.html">getopt_long(3)</a>.
  * In order to simplify usage, this class drives the option parsing by
