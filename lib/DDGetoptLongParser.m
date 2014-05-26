@@ -51,7 +51,7 @@ dd_getopt_long_only(int nargc, char * const *nargv, const char *options,
 
 + (DDGetoptLongParser *)optionsWithTarget:(id)target;
 {
-    return [[[self alloc] initWithTarget: target] autorelease];
+    return [[self alloc] initWithTarget: target];
 }
 
 - (id)initWithTarget:(id)target;
@@ -74,16 +74,6 @@ dd_getopt_long_only(int nargc, char * const *nargv, const char *options,
     return self;
 }
 
-- (void)dealloc
-{
-    [_optionInfoMap release];
-    [_optionString release];
-    [_optionsData release];
-    [_utf8Data release];
-    
-    [super dealloc];
-}
-
 - (id)target;
 {
     return _target;
@@ -93,7 +83,6 @@ dd_getopt_long_only(int nargc, char * const *nargv, const char *options,
 {
     _target = target;
 }
-
 
 - (void)setGetoptLongOnly:(BOOL)getoptLongOnly;
 {
